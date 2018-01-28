@@ -1,0 +1,87 @@
+<!doctype html>
+<html ng-app="vikler">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="Keywords" content="elektro, vikler, elektro-vikler, premotavanje, remont, elektromotori, elektro-motori, transformatori, rucni alati, pumpe, pumpe za vodu, pumpe za grejanje, agregatori, transformatori, video nadzor, alarmi, programiranje, izrada softvera, softver, programi, servis" />
+	<meta name="Description" content="samostalna zanatska radnja elektro-vikler, negotin" />
+
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/icomoon.css">
+	<link rel="stylesheet" href="css/flexslider.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<script src="js/angular.min.js"></script>
+	<script src="js/app.js"></script>
+
+	<title>ELEKTRO-VIKLER</title>
+</head>
+<body>
+
+<div id="page" ng-controller="IndexController as indexCtrl">
+	<header id="header">
+		<div class="container">
+			<div class="header-inner">
+				<!-- <h1><a href="#">ELEKTRO-VIKLER</a></h1> -->
+				<div class="header-title">
+    				<div class="logo"><img src="images/logo.png" alt="logo"/></div>
+        			<div class="name"><img src="images/elektro-vikler.png" alt="elektro vikler"/>
+        			<p class="title-description">samostalna zanatska radnja</p>
+        		</div>
+				<nav>
+					<ul>
+						<li ng-repeat="item in indexCtrl.menu">
+							<a href="#"> {{ item.label }} </a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+
+	<aside id="hero" class="js-fullheight">
+		<div class="flexslider js-fullheight">
+			<ul class="slides">
+		   	<li style=" {{ item.img }} " ng-repeat="item in indexCtrl.slider">
+		   		<div class="container">
+		   			<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
+		   				<div class="slider-text-inner">
+		   					<h2> {{ item.text }} </h2>
+		   					<p><a href="#" class="btn btn-primary with-arrow">Opširnije <i class="icon-arrow-right"></i></a></p>
+		   				</div>
+		   			</div>
+		   		</div>
+		   	</li>
+		  	</ul>
+	  	</div>
+	</aside>
+
+	<div id="why-us" class="animate-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 text-center heading">
+					<h2> {{ indexCtrl.whyUs.title }} </h2>
+					<p> {{ indexCtrl.whyUs.desc }} </p>
+				</div>
+				<div class="col-md-4 text-center item-block" ng-repeat="item in indexCtrl.whyUs.items">
+					<span class="icon"><img src=" {{ item.icon }} " alt=" {{ item.title }} " class="img-responsive"></span>
+					<h3> {{ item.title }} </h3>
+					<p> {{ item.desc }} </p>
+					<p><a href="#" class="btn btn-primary btn-outline with-arrow">Opširnije <i class="icon-arrow-right"></i></a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.waypoints.min.js"></script>
+	<script src="js/jquery.flexslider-min.js"></script>
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<script src="js/main.js"></script>
+
+</body>
+</html>
